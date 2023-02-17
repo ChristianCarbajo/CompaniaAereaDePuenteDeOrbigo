@@ -29,7 +29,7 @@ public class CConnection {
        
        Class.forName("com.mysql.cj.jdbc.Driver");
        con = DriverManager.getConnection(url,user,pass);
-       JOptionPane.showMessageDialog(null, "Conexión establecida");
+       /*JOptionPane.showMessageDialog(null, "Conexión establecida");*/
    
    }catch(Exception e){
        JOptionPane.showMessageDialog(null, "Error al conectarse" + e.toString());
