@@ -24,7 +24,7 @@ public class CConnection {
       String pass="";
       String url="jdbc:mysql://localhost:3306/ChristianAirways";
 
-   public Connection estableceConexion(){
+   public Connection establishedConnection(){
    try{
        
        Class.forName("com.mysql.cj.jdbc.Driver");

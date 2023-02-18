@@ -76,7 +76,7 @@ public class CPilotos {
         this.genero = genero;
     }
 
-    public void InsertarPiloto(JTextField paramNombres, JTextField paramApellidos, JTextField paramRangos, JTextField paramEdades, JTextField paramGeneros) {
+    public void InsertPilot(JTextField paramNombres, JTextField paramApellidos, JTextField paramRangos, JTextField paramEdades, JTextField paramGeneros) {
         
         setNombre(paramNombres.getText());
         setApellidos(paramApellidos.getText());
@@ -90,7 +90,7 @@ public class CPilotos {
 
         try {
 
-            CallableStatement cs = objetoConnection.estableceConexion().prepareCall(consulta);
+            CallableStatement cs = objetoConnection.establishedConnection().prepareCall(consulta);
 
             cs.setString(1, getNombre());
             cs.setString(2, getApellidos());
@@ -110,7 +110,7 @@ public class CPilotos {
 
     }
 
-    public void MostrarPilotos(JTable paramTablaTotalPilotos) {
+    public void ShowPilots(JTable paramTablaTotalPilotos) {
 
         CConnection objetoConnection = new CConnection();
 
@@ -136,7 +136,7 @@ public class CPilotos {
         Statement st;
 
         try {
-            st = objetoConnection.estableceConexion().createStatement();
+            st = objetoConnection.establishedConnection().createStatement();
 
             ResultSet rs = st.executeQuery(sql);
 
@@ -199,7 +199,7 @@ public class CPilotos {
 
         try {
 
-            CallableStatement cs = objetoConnection.estableceConexion().prepareCall(consultation);
+            CallableStatement cs = objetoConnection.establishedConnection().prepareCall(consultation);
             
             
             cs.setString(1, getNombre());
@@ -233,7 +233,7 @@ public class CPilotos {
         
         try {
             
-            CallableStatement cs = objetoConnection.estableceConexion().prepareCall(consultation);
+            CallableStatement cs = objetoConnection.establishedConnection().prepareCall(consultation);
             
             cs.setInt(1,getId());
             cs.execute();

@@ -19,7 +19,7 @@ public class Pilotos extends javax.swing.JFrame {
         
         
         CPilotos objetoPilotos = new CPilotos();
-        objetoPilotos.MostrarPilotos(tblPilots);
+        objetoPilotos.ShowPilots(tblPilots);
     }
 
   
@@ -222,8 +222,8 @@ public class Pilotos extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
        CPilotos objetoPiloto = new CPilotos();
-       objetoPiloto.InsertarPiloto(jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
-       objetoPiloto.MostrarPilotos(tblPilots);
+       objetoPiloto.InsertPilot(jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
+       objetoPiloto.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void tblPilotsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPilotsMouseClicked
@@ -234,13 +234,13 @@ public class Pilotos extends javax.swing.JFrame {
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
         CPilotos objetoPiloto = new CPilotos();
        objetoPiloto.ChangePilot(jTextId ,jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
-       objetoPiloto.MostrarPilotos(tblPilots);
+       objetoPiloto.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         CPilotos objetoPiloto = new CPilotos();
        objetoPiloto.DeletePilot(jTextId);
-       objetoPiloto.MostrarPilotos(tblPilots);
+       objetoPiloto.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
