@@ -5,7 +5,6 @@
 package com.mycompany.companiaaereadepuentedeorbigo;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
 
@@ -17,27 +16,25 @@ import javax.swing.JOptionPane;
  */
 public class CConnection {
      
-    Connection con =null;
-    
-      String driver="com.mysql.jdbc.Driver";
-      String user="root";
-      String pass="";
-      String url="jdbc:mysql://localhost:3306/ChristianAirways";
+MySQL mySQLConnection = new MySQL();
 
-   public Connection establishedConnection(){
-   try{
-       
-       Class.forName("com.mysql.cj.jdbc.Driver");
-       con = DriverManager.getConnection(url,user,pass);
-       /*JOptionPane.showMessageDialog(null, "Conexión establecida");*/
-   
-   }catch(Exception e){
-       JOptionPane.showMessageDialog(null, "Error al conectarse" + e.toString());
+Connection manolo =null;
+
+   public Connection  establishedConnection(){
+  
+try{
+  manolo = mySQLConnection.establishedConnectionMySQL();
+  
+  
+}catch(Exception e){
+    JOptionPane.showMessageDialog(null, "Error al conectarse" + e.toString()); 
    }
-           return con;
-           
-           }
-}
+    return manolo;
+   
+    
+   }    
+
+};
 
     
     

@@ -18,8 +18,8 @@ public class Pilotos extends javax.swing.JFrame {
         
         
         
-        CPilotos objetoPilotos = new CPilotos();
-        objetoPilotos.ShowPilots(tblPilots);
+        CShow objetoShow = new CShow();
+        objetoShow.ShowPilots(tblPilots);
     }
 
   
@@ -129,8 +129,9 @@ public class Pilotos extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
                         .addComponent(btnSave)
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addComponent(btnChange)
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete)
@@ -145,13 +146,14 @@ public class Pilotos extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextName)
-                            .addComponent(jTextSurname)
-                            .addComponent(jTextGender, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(jTextAge)
-                            .addComponent(jTextGrade)
-                            .addComponent(jTextId))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextName)
+                                .addComponent(jTextSurname)
+                                .addComponent(jTextGender, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                                .addComponent(jTextAge)
+                                .addComponent(jTextId))
+                            .addComponent(jTextGrade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,10 +171,13 @@ public class Pilotos extends javax.swing.JFrame {
                     .addComponent(jTextSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -182,10 +187,10 @@ public class Pilotos extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
                     .addComponent(btnChange)
                     .addComponent(btnDelete)
-                    .addComponent(btnClean))
+                    .addComponent(btnClean)
+                    .addComponent(btnSave))
                 .addGap(84, 84, 84))
         );
 
@@ -212,8 +217,8 @@ public class Pilotos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
@@ -221,26 +226,29 @@ public class Pilotos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-       CPilotos objetoPiloto = new CPilotos();
-       objetoPiloto.InsertPilot(jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
-       objetoPiloto.ShowPilots(tblPilots);
+       CInsert objetoInsert = new CInsert();
+       CShow objetoShow = new CShow();
+       objetoInsert.InsertPilot(jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
+       objetoShow.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void tblPilotsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPilotsMouseClicked
-       CPilotos objetoPiloto = new CPilotos();
-       objetoPiloto.SelectionPilots(tblPilots,jTextId,jTextName,jTextSurname,jTextGrade,jTextAge,jTextGender);
+       CSelection objetoSelection = new CSelection();
+       objetoSelection.SelectionPilots(tblPilots,jTextId,jTextName,jTextSurname,jTextGrade,jTextAge,jTextGender);
     }//GEN-LAST:event_tblPilotsMouseClicked
 
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
-        CPilotos objetoPiloto = new CPilotos();
-       objetoPiloto.ChangePilot(jTextId ,jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
-       objetoPiloto.ShowPilots(tblPilots);
+        CShow objetoShow = new CShow();
+        CChange objetoChange = new CChange();
+       objetoChange.ChangePilot(jTextId ,jTextName, jTextSurname, jTextGrade, jTextAge, jTextGender);
+       objetoShow.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        CPilotos objetoPiloto = new CPilotos();
-       objetoPiloto.DeletePilot(jTextId);
-       objetoPiloto.ShowPilots(tblPilots);
+        CDelete objetoDelete = new CDelete();
+       CShow objetoShow = new CShow();
+       objetoDelete.DeletePilot(jTextId);
+       objetoShow.ShowPilots(tblPilots);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**

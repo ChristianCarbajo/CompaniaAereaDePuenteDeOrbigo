@@ -11,6 +11,7 @@ package com.mycompany.companiaaereadepuentedeorbigo;
 public class CompaniaAereaDePuenteDeOrbigo {
 
     public static void main(String[] args) {
+        
        Pilotos objetoFormulario = new Pilotos();
        objetoFormulario.setVisible(true);
     }
